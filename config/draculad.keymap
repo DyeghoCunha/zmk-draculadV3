@@ -119,7 +119,7 @@ rgb_rotate: encoder_rotate {
                                     &kp C       &kp V       &kp X                              &mo FKEYS2  &kp N       &kp M
             >;
           sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp F24 F24>;
-          sensor-bindings = <&rgb_rotate>;
+          sensor-bindings = <&rgb_underglow_step 0x10>;
         };
 
     };
