@@ -1,8 +1,4 @@
-Para adicionar um rotary encoder no lado esquerdo e dois rotary encoders no lado direito no arquivo `info.json`, você deve adicionar essas entradas na seção de "sensors". Vou fornecer um exemplo de como você pode fazer isso:
 
-1. **Adicione os rotary encoders na seção "sensors":**
-
-```json
 {
   "id": "draculad",
   "name": "Draculad",
