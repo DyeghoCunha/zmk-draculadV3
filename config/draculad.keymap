@@ -116,6 +116,9 @@
                         //                         &kp TAB         &kp TAB         &kp BSPC        &kp SPC &kp TAB &kp TAB
                         // >;
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
         };
 };
