@@ -70,7 +70,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_DN C_VOL_UP>,
-                <&inc_dec_kp &rgb_underglow_step 0x10>,
+                <&inc_dec_kp rgb_underglow_step 0x10>,
                 <&inc_dec_kp C_AC_ZOOM_IN C_AC_ZOOM_OUT>;
 
           
