@@ -70,14 +70,10 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_DN C_VOL_UP>,
-                <&inc_dec_kp F24 F24>,
+                <&inc_dec_kp &rgb_underglow_step 0x10>,
                 <&inc_dec_kp C_AC_ZOOM_IN C_AC_ZOOM_OUT>;
 
-            sensor-bindings = <&rgb_underglow_step 0x10>;
-            sensor-bindings =
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>,
-                <&inc_dec_kp DOWN UP>,
-                <&inc_dec_kp C_AC_ZOOM_IN C_AC_ZOOM_OUT>;
+          
         };
 
         NAV {
