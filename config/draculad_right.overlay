@@ -21,6 +21,4 @@
 
 &new_encoder {
     status = "okay";
-    pin-a = <&pro_micro_a 4 GPIO_ACTIVE_HIGH>;
-    pin-b = <&pro_micro_a 5 GPIO_ACTIVE_HIGH>;
 };
