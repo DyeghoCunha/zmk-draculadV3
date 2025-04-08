@@ -6,12 +6,9 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-<<<<<<< Updated upstream
+#include <dt-bindings/zmk/bt.h>
 
 // Layer definitions
-=======
-#include <dt-bindings/zmk/bt.h>
->>>>>>> Stashed changes
 
 // Layers
 #define DEFAULT 0
@@ -24,33 +21,33 @@
 
 /{ 
     behaviors { 
-     hm: homerow_mods {     
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS";
-        #binding-cells = <2>;
-        tapping-term-ms = <250>;
-        quick-tap-ms = <0>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
-      };
-     hplt: hold_preferred-lt {     
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOLD_PREFERRED_LT";
-        #binding-cells = <2>;
-        tapping-term-ms = <195>;
-        quick-tap-ms = <0>;
-        flavor = "hold-preferred";
-        bindings = <&mo>, <&kp>;
-      };
-     hms: homerow_mod_shift {     
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MOD_SHIFT";
-        #binding-cells = <2>;
-        tapping-term-ms = <170>;
-        quick-tap-ms = <0>;
-        flavor = "balanced";
-        bindings = <&kp>, <&kp>;
-      };
+        hm: homerow_mods {     
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        hplt: hold_preferred-lt {     
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_PREFERRED_LT";
+            #binding-cells = <2>;
+            tapping-term-ms = <195>;
+            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
+            bindings = <&mo>, <&kp>;
+        };
+        hms: homerow_mod_shift {     
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MOD_SHIFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <170>;
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -59,7 +56,7 @@
             &kp Q       &kp D       &kp R       &kp W       &kp B                              &kp J       &kp F       &kp U       &kp P       &kp SEMI 
             &hm LALT A  &hms LSHFT S &hm LGUI H  &hm LCTRL T &kp G                             &kp Y       &hm RCTRL N &hm LGUI E  &hms RSHFT O &hm LALT I
             &kp Z       &kp X       &kp M       &kp C       &kp V  &bt BT_SEL 0  &bt BT_SEL 1  &kp K       &kp L       &kp COMMA   &kp DOT     &kp FSLH
-                              &hplt FKEYS DEL &hplt NAV ESC &kp X                              &mo FKEYS2  &lt NUM SPACE &kp BSPC    
+                               &hplt FKEYS DEL &hplt NAV ESC &kp X                              &mo FKEYS2  &lt NUM SPACE &kp BSPC    
             >;
           sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp DOWN UP>;
         };
@@ -125,6 +122,4 @@
         };
 
     };
-};
-
-o	
+};	
