@@ -5,6 +5,7 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
@@ -39,6 +40,13 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
+        };
+
+        luz: new_behavior {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            label = "Luz";
+            #sensor-binding-cells = <2>;
+            bindings = <&bl>, <&bl>;
         };
     };
 
