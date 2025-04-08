@@ -216,10 +216,10 @@
         default_layer {
             label = "Base";
             bindings = <
-  &kp Q  &kp W  &kp E  &kp R  &kp T               &kp Y      &kp U  &kp I      &kp O    &kp P
-  &kp A  &kp S  &kp D  &kp F  &kp G               &kp H      &kp J  &kp K      &kp L    &kp QMARK
-  &kp Z  &kp X  &kp C  &kp V  &kp B               &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON
-                       &mo 2  &qt LSHIFT SPACE    &kp SPACE  &sl 1
+  &kp Q  &kp W  &kp E  &kp R  &kp T                 &kp Y      &kp U  &kp I      &kp O    &kp P
+  &kp A  &kp S  &kp D  &kp F  &kp G                 &kp H      &kp J  &kp K      &kp L    &kp QMARK
+  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp B   &kp B  &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON
+                &kp C  &mo 2  &qt LSHIFT SPACE       &kp SPACE  &sl 1 &sensor_right_encoder_extra
             >;
 
             sensor-bindings =
