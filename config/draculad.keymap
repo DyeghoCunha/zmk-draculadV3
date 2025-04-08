@@ -224,7 +224,7 @@
 
             sensor-bindings =
                 <&rgb RGB_HUI RGB_HUD>,
-                <&inc_dec_kp A B>,
+                <&rgb RGB_BRI RGB_SAD>,
                 <&rgb RGB_EFF RGB_EFR>;
         };
 
