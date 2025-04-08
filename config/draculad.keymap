@@ -225,7 +225,7 @@
             sensor-bindings =
                 <&rgb RGB_HUI RGB_HUD>,
                 <&inc_dec_kp A B>,
-                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+                <&rgb RGB_EFF RGB_EFR>;
         };
 
         // Numbers and high frequency symbols
