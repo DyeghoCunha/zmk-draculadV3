@@ -4,7 +4,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-
+&kp {
+    compatible = "zmk,key-press";
+    label = "Key Press Handler";
+};
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
