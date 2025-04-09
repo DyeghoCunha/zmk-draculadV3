@@ -43,25 +43,23 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(3,1)         RC(3,8) RC(2,5) RC(2,6) 
             ;
     };
 
-    left_encoder: encoder_left {
-            compatible = "alps,ec11";
-            label = "LEFT_ENCODER";
-            a-gpios = <&pro_micro_d 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-            b-gpios = <&pro_micro_a 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-            resolution = <4>;
-        };
 
-    right_encoder: encoder_right {
-            compatible = "alps,ec11";
-            label = "RIGHT_ENCODER";
-            a-gpios = <&pro_micro_a 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-            b-gpios = <&pro_micro_d 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-            resolution = <4>;
+    encoder0: ec11_left {
+        compatible = "zmk,ec11-rotary-encoder";
+        gpios = <&gpio0 10 GPIO_ACTIVE_LOW>, <&gpio0 11 GPIO_ACTIVE_LOW>;
+        label = "EC11_LEFT";
     };
 
-    sensors {
-            compatible = "zmk,keymap-sensors";
-            sensors = <&left_encoder &right_encoder>;
+    encoder1: ec11_right_1 {
+        compatible = "zmk,ec11-rotary-encoder";
+        gpios = <&gpio0 12 GPIO_ACTIVE_LOW>, <&gpio0 13 GPIO_ACTIVE_LOW>;
+        label = "EC11_RIGHT_1";
+    };
+
+    encoder2: ec11_right_2 {
+        compatible = "zmk,ec11-rotary-encoder";
+        gpios = <&gpio0 14 GPIO_ACTIVE_LOW>, <&gpio0 15 GPIO_ACTIVE_LOW>;
+        label = "EC11_RIGHT_2";
     };
 
 };
