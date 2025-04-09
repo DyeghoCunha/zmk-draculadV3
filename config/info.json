@@ -4,7 +4,7 @@
   "productId": "0x6060",
   "keyboard_geometry": "split",
   "layouts": {
-    "keymap": {
+    "LAYOUT_draculad": {
       "layout": [
         {
           "label": "L00",
@@ -296,5 +296,4 @@
       ]
     }
   }
-}
 }
