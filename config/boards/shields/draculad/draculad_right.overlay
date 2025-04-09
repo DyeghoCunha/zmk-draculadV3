@@ -18,3 +18,7 @@
 &right_encoder {
 	status = "okay";
 };
+
+&right_encoder2 {
+	status = "okay";
+};
