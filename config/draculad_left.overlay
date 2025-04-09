@@ -12,11 +12,13 @@
 };
 
 / {
-    left_encoder: encoder0 {
+    ec11_left: encoder0 {
         compatible = "zmk,ec11-rotary-encoder";
-        label = "Left Encoder";
-        gpios = <&gpio0 10 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>,
-                <&gpio0 11 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
-        events = <&rotate_left_action>, <&rotate_right_action>;
+        label = "EC11_LEFT";
+        gpios = <&gpio0 10 GPIO_ACTIVE_LOW>, <&gpio0 11 GPIO_ACTIVE_LOW>;
+        rotate-ccw = <&kp A>;
+        rotate-cw  = <&kp B>;
     };
+};
+
 };
