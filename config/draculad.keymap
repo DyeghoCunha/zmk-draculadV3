@@ -128,7 +128,7 @@
 &kp Q        &kp W       &kp E       &kp R         &kp T                                         &kp Y  &kp U         &kp I       &kp O       &kp P
 &hm LCTRL A  &hm LALT S  &hm LGUI D  &hms LSHFT F  &kp G                                         &kp H  &hms RSHFT J  &hm RGUI K  &hm RALT L  &hm RCTRL SEMI
 &kp Z        &kp X       &kp C       &kp V         &kp B         &kp C_MUTE      &rgb_ug RGB_ON  &kp N  &kp M         &kp COMMA   &kp PERIOD  &kp QMARK
-                                     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3    &kp TAB
+                                     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6
             >;
 
             sensor-bindings =
