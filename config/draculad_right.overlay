@@ -15,6 +15,21 @@
         ;
 };
 
-&right_encoder {
-	status = "okay";
+/ {
+
+    ec11_right_1: encoder1 {
+        compatible = "zmk,ec11-rotary-encoder";
+        label = "EC11_RIGHT_1";
+        gpios = <&gpio0 12 GPIO_ACTIVE_LOW>, <&gpio0 13 GPIO_ACTIVE_LOW>;
+        rotate-ccw = <&kp C>;
+        rotate-cw  = <&kp D>;
+    };
+
+    ec11_right_2: encoder2 {
+        compatible = "zmk,ec11-rotary-encoder";
+        label = "EC11_RIGHT_2";
+        gpios = <&gpio0 14 GPIO_ACTIVE_LOW>, <&gpio0 15 GPIO_ACTIVE_LOW>;
+        rotate-ccw = <&kp E>;
+        rotate-cw  = <&kp F>;
+    };
 };
