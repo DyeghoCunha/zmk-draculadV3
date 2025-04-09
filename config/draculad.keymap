@@ -208,10 +208,8 @@
   &kp DOLLAR  &mo 2  &qt LEFT_SHIFT SPACE  &kp N5           &kp N6  &kp SPACE  &sl 1      &kp N7
             >;
 
-            / 
-    &
-
-            encoder0: ec11_left {
+            /{
+              &encoder0: ec11_left {
                 compatible = "zmk,ec11-rotary-encoder";
                 gpios =
                     <&gpio0 10 GPIO_ACTIVE_LOW>,
