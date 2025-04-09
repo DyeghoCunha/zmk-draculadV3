@@ -208,32 +208,44 @@
   &kp DOLLAR  &mo 2  &qt LEFT_SHIFT SPACE  &kp N5           &kp N6  &kp SPACE  &sl 1      &kp N7
             >;
 
-            /{
-              &encoder0: ec11_left {
-                compatible = "zmk,ec11-rotary-encoder";
-                gpios =
-                    <&gpio0 10 GPIO_ACTIVE_LOW>,
-                    <&gpio0 11 GPIO_ACTIVE_LOW>;
+            / {
+                &encoder0:
 
-                label = "EC11_LEFT";
-            };
+                ec11_left {
+                    compatible = "zmk,ec11-rotary-encoder";
+                    gpios =
+                        <&gpio0 10 GPIO_ACTIVE_LOW>,
+                        <&gpio0 11 GPIO_ACTIVE_LOW>;
 
-            &encoder1: ec11_right_1 {
-                compatible = "zmk,ec11-rotary-encoder";
-                gpios =
-                    <&gpio0 12 GPIO_ACTIVE_LOW>,
-                    <&gpio0 13 GPIO_ACTIVE_LOW>;
+                    label = "EC11_LEFT";
+                };
 
-                label = "EC11_RIGHT_1";
-            };
+                &encoder1:
 
-            &encoder2:ec11_right_2 {
-                compatible = "zmk,ec11-rotary-encoder";
-                gpios =
-                    <&gpio0 14 GPIO_ACTIVE_LOW>,
-                    <&gpio0 15 GPIO_ACTIVE_LOW>;
+                ec11_right_1 {
+                    compatible = "zmk,ec11-rotary-encoder";
+                    gpios =
+                        <&gpio0 12 GPIO_ACTIVE_LOW>,
+                        <&gpio0 13 GPIO_ACTIVE_LOW>;
 
-                label = "EC11_RIGHT_2";
+                    label = "EC11_RIGHT_1";
+                };
+
+                &encoder2:
+
+                ec11_right_2 {
+                    compatible = "zmk,ec11-rotary-encoder";
+                    gpios =
+                        <&gpio0 14 GPIO_ACTIVE_LOW>,
+                        <&gpio0 15 GPIO_ACTIVE_LOW>;
+
+                    label = "EC11_RIGHT_2";
+                };
+
+                sensor-bindings =
+                    <&inc_dec_kp A B>,
+                    <&inc_dec_kp C D>,
+                    <&inc_dec_kp E F>;
             };
 
             sensor-bindings =
@@ -241,7 +253,7 @@
                 <&inc_dec_kp C D>,
                 <&inc_dec_kp E F>;
         };
-};
+
         // Numbers and high frequency symbols
 
         sym_layer {
