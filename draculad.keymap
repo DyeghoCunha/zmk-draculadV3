@@ -218,14 +218,21 @@
             bindings = <
   &kp Q  &kp W  &kp E  &kp R  &kp T               &kp Y      &kp U  &kp I      &kp O    &kp P
   &kp A  &kp S  &kp D  &kp F  &kp G               &kp H      &kp J  &kp K      &kp L    &kp QMARK
-  &kp Z  &kp X  &kp C  &kp V  &kp B               &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON
-                       &mo 2  &qt LSHIFT SPACE    &kp SPACE  &sl 1
+  &kp Z  &kp X  &kp C  &kp V  &kp B   &encoder0  &encoder1           &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON
+                       &mo 2  &qt LSHIFT SPACE    &kp SPACE  &sl 1  &encoder2
             >;
 
-            sensor-bindings =
-                <&rgb RGB_HUI RGB_HUD>,
-                <&rgb RGB_BRI RGB_SAD>,
-                <&rgb RGB_EFF RGB_EFR>;
+        &encoder0 {
+            bindings = <&kp VOLU>, <&kp VOLD>; // Lado esquerdo (RC(3,3))
+        };
+
+        &encoder1 {
+            bindings = <&kp RIGHT>, <&kp LEFT>; // Lado direito - primeiro encoder (RC(3,4))
+        };
+
+        &encoder2 {
+            bindings = <&kp PGDN>, <&kp PGUP>;  // Lado direito - segundo encoder (RC(3,7))
+        };
         };
 
         // Numbers and high frequency symbols
