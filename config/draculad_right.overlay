@@ -5,7 +5,7 @@
 };
 
 &kscan0 {
-    col-gpios = 
+    col-gpios =
         <&pro_micro_d 15 GPIO_ACTIVE_HIGH>,
         <&pro_micro_a 0 GPIO_ACTIVE_HIGH>,
         <&pro_micro_a 1 GPIO_ACTIVE_HIGH>,
@@ -17,6 +17,7 @@
     compatible = "nordic,nrf-gpio";
 };
 
+/* Define &kp or replace it with an appropriate label */
 &kp {
     compatible = "zmk,key-press";
 };
@@ -25,14 +26,14 @@ ec11_right_1: encoder1 {
     compatible = "zmk,ec11-rotary-encoder";
     label = "EC11_RIGHT_1";
     gpios = <&gpio0 12 GPIO_ACTIVE_LOW>, <&gpio0 13 GPIO_ACTIVE_LOW>;
-    rotate-ccw = <&kp C>;
-    rotate-cw  = <&kp D>;
+    rotate-ccw = <&kp C>;  /* Check if &kp is valid */
+    rotate-cw  = <&kp D>;  /* Check if &kp is valid */
 };
 
 ec11_right_2: encoder2 {
     compatible = "zmk,ec11-rotary-encoder";
     label = "EC11_RIGHT_2";
     gpios = <&gpio0 14 GPIO_ACTIVE_LOW>, <&gpio0 15 GPIO_ACTIVE_LOW>;
-    rotate-ccw = <&kp E>;
-    rotate-cw  = <&kp F>;
+    rotate-ccw = <&kp E>;  /* Check if &kp is valid */
+    rotate-cw  = <&kp F>;  /* Check if &kp is valid */
 };
