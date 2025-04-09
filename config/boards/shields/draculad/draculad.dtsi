@@ -13,6 +13,25 @@
         zmk,matrix_transform = &default_transform;
     };
 
+/ {
+    led_strip_left: rgb_left {
+        compatible = "ws2812-strip";
+        label = "RGB UnderGlow Left";
+        chain-length = <10>;
+        color-order = "GRB";
+        gpio = <&gpio0 13 GPIO_ACTIVE_HIGH>; // P0.13
+    };
+
+    led_strip_right: rgb_right {
+        compatible = "ws2812-strip";
+        label = "RGB UnderGlow Right";
+        chain-length = <10>;
+        color-order = "GRB";
+        gpio = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+    };
+};
+
+
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <10>;
