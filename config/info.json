@@ -273,27 +273,22 @@
           "col": 8
         },
         {
-          "label": "Rotary L",
           "x": 3,
           "y": 3.5,
-          "row": 3,
-          "col": 3
+          "label": "Rotary L"
         },
         {
-          "label": "Rotary R1",
           "x": 10,
           "y": 3.5,
-          "row": 3,
-          "col": 4
+          "label": "Rotary R1"
         },
         {
-          "label": "Rotary R2",
           "x": 11.5,
           "y": 3.5,
-          "row": 3,
-          "col": 7
+          "label": "Rotary R2"
         }
       ]
     }
   }
+}
 }
