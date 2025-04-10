@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
 
 // Layer definitions
 
@@ -104,7 +105,7 @@
 
         combo_sym2 {
             timeout-ms = <200>;
-            key-positions = <33 32>;
+            key-positions = <33 34>;
             bindings = <&mo 4>;
         };
 
@@ -156,12 +157,12 @@
 
         Linguagem {
             bindings = <&kp LG(SPACE)>;
-            key-positions = <30 31 32 33>;
+            key-positions = <33 34 35 36>;
         };
 
         enter2 {
             bindings = <&kp RETURN>;
-            key-positions = <25 26 27>;
+            key-positions = <27 28 29>;
         };
 
         backspace2 {
@@ -218,85 +219,85 @@
         default_layer {
             label = "Base";
             bindings = <
-  &kp Q  &kp W  &kp E  &kp R  &kp T                                        &kp Y      &kp U  &kp I      &kp O    &kp P
-  &kp A  &kp S  &kp D  &kp F  &kp G                                        &kp H      &kp J  &kp K      &kp L    &kp QMARK
-  &kp Z  &kp X  &kp C  &kp V  &kp B   &kp C_MUTE      &rgb_ug RGB_ON       &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON
-                  &trans &mo 2  &qt LSHIFT SPACE                       &kp SPACE  &sl 1 &trans
+&kp Q  &kp W  &kp E  &kp R   &kp T                                      &kp Y  &kp U   &kp I      &kp O    &kp P
+&kp A  &kp S  &kp D  &kp F   &kp G                                      &kp H  &kp J   &kp K      &kp L    &kp QMARK
+&kp Z  &kp X  &kp C  &kp V   &kp B  &kp C_MUTE          &rgb_ug RGB_ON  &kp N  &kp M   &kp COMMA  &kp DOT  &kp SEMICOLON
+                     &trans  &mo 2  &qt LSHIFT SPACE    &kp SPACE       &sl 1  &trans
             >;
-        sensor-bindings =
+
+            sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
                 <&inc_dec_kp A B>,
                 <&inc_dec_kp B A>;
         };
-        
 
         // Numbers and high frequency symbols
 
         sym_layer {
             label = "Sym.";
             bindings = <
-  &kp N1            &kp N2       &kp N3                 &kp NUMBER_4     &kp N5               &kp NUMBER_6  &kp N7           &kp N8             &kp N9     &kp N0
-  &kp LESS_THAN     &kp AT_SIGN  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET     &kp EQUAL     &sk TILDE        &kp SINGLE_QUOTE   &kp PLUS   &kp ASTERISK
-  &kp GREATER_THAN  &kp DOLLAR   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET &kp C_MUTE      &rgb_ug RGB_ON   &kp PERCENT   &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp MINUS  &sk CARET
-                                                  &none       &mo 3            &mo 4                &trans        &trans  &none
+&kp N1            &kp N2       &kp N3                 &kp NUMBER_4     &kp N5                                           &kp NUMBER_6  &kp N7           &kp N8             &kp N9     &kp N0
+&kp LESS_THAN     &kp AT_SIGN  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET                                 &kp EQUAL     &sk TILDE        &kp SINGLE_QUOTE   &kp PLUS   &kp ASTERISK
+&kp GREATER_THAN  &kp DOLLAR   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp C_MUTE    &rgb_ug RGB_ON  &kp PERCENT   &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp MINUS  &sk CARET
+                                                      &none            &mo 3              &mo 4         &trans          &trans        &none
             >;
-        sensor-bindings =
+
+            sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
                 <&inc_dec_kp A B>,
                 <&inc_dec_kp B A>;
         };
-        
 
         // Main modifiers and arrow keys
 
         ext_layer {
             label = "Mods";
             bindings = <
-  &kp ESC    &kp C_PREV  &kp C_PP    &kp C_NEXT  &kp C_PAUSE    &kp PG_UP     &kp HOME  &kp UP    &kp END    &kp CAPS
-  &sk LALT   &sk LGUI    &sk LSHIFT  &sk LCTRL   &kp RALT       &kp PG_DN     &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL
-  &kp LC(Z)  &kp LC(X)   &kp LC(C)   &kp TAB     &kp LC(V) &kp C_MUTE      &rgb_ug RGB_ON     &kp LC(BSPC)  &kp BSPC  &trans    &trans     &trans
-                                 &none     &trans      &kp LCTRL      &kp ENTER     &mo 3  &none
+&kp ESC    &kp C_PREV  &kp C_PP    &kp C_NEXT  &kp C_PAUSE                                &kp PG_UP     &kp HOME  &kp UP    &kp END    &kp CAPS
+&sk LALT   &sk LGUI    &sk LSHIFT  &sk LCTRL   &kp RALT                                   &kp PG_DN     &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL
+&kp LC(Z)  &kp LC(X)   &kp LC(C)   &kp TAB     &kp LC(V)    &kp C_MUTE    &rgb_ug RGB_ON  &kp LC(BSPC)  &kp BSPC  &trans    &trans     &trans
+                                   &none       &trans       &kp LCTRL     &kp ENTER       &mo 3         &none
             >;
-        sensor-bindings =
+
+            sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
                 <&inc_dec_kp A B>,
                 <&inc_dec_kp B A>;
         };
-        
 
         // Function keys with modifiers
 
         fnc_layer {
             label = "FRow";
             bindings = <
-  &kp F1    &kp F2    &kp F3      &kp F4     &kp F5      &kp F6   &kp F7   &kp F8           &kp F9  &kp F10
-  &sk LALT  &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT    &kp F11  &kp F12  &kp PRINTSCREEN  &trans  &trans
-  &none     &none     &none       &none      &none   &kp C_MUTE      &rgb_ug RGB_ON    &none    &none    &none            &none   &none
-                              &none     &none      &none       &none    &none  &none
+&kp F1    &kp F2    &kp F3      &kp F4     &kp F5                                  &kp F6   &kp F7   &kp F8           &kp F9  &kp F10
+&sk LALT  &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT                                &kp F11  &kp F12  &kp PRINTSCREEN  &trans  &trans
+&none     &none     &none       &none      &none     &kp C_MUTE    &rgb_ug RGB_ON  &none    &none    &none            &none   &none
+                                &none      &none     &none         &none           &none    &none
             >;
-        sensor-bindings =
+
+            sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
                 <&inc_dec_kp A B>,
                 <&inc_dec_kp B A>;
         };
-        
 
         // Low frequency symbols
 
         symbols_2_layer {
             label = "Sym.2";
             bindings = <
-  &sk LS(SINGLE_QUOTE)  &kp UNDERSCORE    &kp MINUS             &kp AMPERSAND  &kp POUND    &none  &none  &none  &none  &none
-  &sk TILDE             &sk SINGLE_QUOTE  &kp NON_US_BACKSLASH  &kp PIPE       &kp SLASH    &none  &none  &none  &none  &none
-  &sk CARET             &none             &none                 &none          &kp RA(W) &kp C_MUTE      &rgb_ug RGB_ON   &none  &none  &none  &none  &none
-                                                              &none   &none          &none        &none  &none  &none
+&sk LS(SINGLE_QUOTE)  &kp UNDERSCORE    &kp MINUS             &kp AMPERSAND  &kp POUND                                &none  &none  &none  &none  &none
+&sk TILDE             &sk SINGLE_QUOTE  &kp NON_US_BACKSLASH  &kp PIPE       &kp SLASH                                &none  &none  &none  &none  &none
+&sk CARET             &none             &none                 &none          &kp RA(W)  &kp C_MUTE    &rgb_ug RGB_ON  &none  &none  &none  &none  &none
+                                                              &none          &none      &none         &none           &none  &none
             >;
-        sensor-bindings =
+
+            sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
                 <&inc_dec_kp A B>,
                 <&inc_dec_kp B A>;
         };
-        
 
         // Used to type regional accents
         // Used to change the keyboard's settings
@@ -304,22 +305,16 @@
         settings_layer {
             label = "Sett.";
             bindings = <
-  &bootloader  &none  &none  &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 3  &none  &unstick  &none  &bootloader
-  &none        &none  &none  &none       &bt BT_SEL 1    &bt BT_SEL 4  &none  &none     &none  &none
-  &none        &none  &none  &none       &bt BT_SEL 2 &kp C_MUTE      &rgb_ug RGB_ON   &bt BT_SEL 5  &none  &none     &none  &none
-                           &none   &none       &none           &none         &none  &none
+&bootloader  &none  &none  &bt BT_CLR  &bt BT_SEL 0                                &bt BT_SEL 3  &none  &unstick  &none  &bootloader
+&none        &none  &none  &none       &bt BT_SEL 1                                &bt BT_SEL 4  &none  &none     &none  &none
+&none        &none  &none  &none       &bt BT_SEL 2  &kp C_MUTE    &rgb_ug RGB_ON  &bt BT_SEL 5  &none  &none     &none  &none
+                           &none       &none         &none         &none           &none         &none
             >;
-        sensor-bindings =
+
+            sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
                 <&inc_dec_kp A B>,
                 <&inc_dec_kp B A>;
         };
-        
     };
 };
-
-
-
-
-
-
