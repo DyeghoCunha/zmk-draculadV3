@@ -14,12 +14,7 @@
         , <&pro_micro_a 3 GPIO_ACTIVE_HIGH>
         ;
 };
-&display_node {
-    status = "okay";
-    compatible = "your_display_driver_compatible";
-    reg = <address>;
-    // Add other properties specific to your display driver.
-};
+
 
 &right_encoder {
 	status = "okay";
