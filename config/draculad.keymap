@@ -5,6 +5,7 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 // Layers
@@ -16,7 +17,6 @@
 #define SYM2 4
 #define ACCENT 5
 #define SETTINGS 6
-
 
 / {
     behaviors {
@@ -49,8 +49,8 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
-   
-    // Enables holding the first mod-tap key by performing a tap-release-hold sequence.
+
+        // Enables holding the first mod-tap key by performing a tap-release-hold sequence.
         // To use it: "&qt KEYCODE1 KEYCODE2"
 
         qt: quick_tap {
@@ -118,7 +118,7 @@
 
         combo_accent {
             timeout-ms = <200>;
-            key-positions = <33 31>;
+            key-positions = <36 34>;
             bindings = <&mo 0>;
         };
 
@@ -126,7 +126,7 @@
 
         combo_sym2 {
             timeout-ms = <200>;
-            key-positions = <33 32>;
+            key-positions = <35 36>;
             bindings = <&mo 4>;
         };
 
@@ -134,7 +134,7 @@
 
         combo_settings {
             timeout-ms = <200>;
-            key-positions = <30 31>;
+            key-positions = <34 33>;
             bindings = <&mo 5>;
         };
 
@@ -178,12 +178,12 @@
 
         Linguagem {
             bindings = <&kp LG(SPACE)>;
-            key-positions = <30 31 32 33>;
+            key-positions = <33 35 36 34>;
         };
 
         enter2 {
             bindings = <&kp RETURN>;
-            key-positions = <25 26 27>;
+            key-positions = <27 28 29>;
         };
 
         backspace2 {
@@ -225,22 +225,20 @@
     keymap {
         compatible = "zmk,keymap";
 
-        
-            /*
+        /*
                                 Q       W       E       R       T       Y       U       I       O       P
                                 A       S       D       F       G       H       J       K       L       ;
                                 Z       X       C       V       B       N       M       ,       .       /
                                                 TAB     TAB     BSPC    SPC     TAB     TAB
                         */
-       
 
-    default_layer {
+        default_layer {
             label = "Base";
             bindings = <
-  &kp Q  &kp W  &kp E  &kp R  &kp T               &kp Y      &kp U  &kp I      &kp O    &kp P
-  &hm LCTRL A   &hm LALT S      &hm LGUI D      &hms LSHFT F  &kp G               &kp H      &hms RSHFT J    &hm RGUI K      &hm RALT L    &hm RCTRL QMARK
-  &kp Z  &kp X  &kp C  &kp V  &kp B &trans &trans               &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON
-                   &trans &trans   &mo 2  &qt LSHIFT SPACE    &kp SPACE  &sl 1 &trans
+&kp Q        &kp W       &kp E       &kp R         &kp T                                &kp Y  &kp U         &kp I       &kp O       &kp P
+&hm LCTRL A  &hm LALT S  &hm LGUI D  &hms LSHFT F  &kp G                                &kp H  &hms RSHFT J  &hm RGUI K  &hm RALT L  &hm RCTRL QMARK
+&kp Z        &kp X       &kp C       &kp V         &kp B  &trans             &kp N8     &kp N  &kp M         &kp COMMA   &kp DOT     &kp SEMICOLON
+                                     &trans        &mo 2  &qt LSHFT SPACE    &kp SPACE  &sl 1  &kp N9
             >;
         };
 
@@ -249,10 +247,10 @@
         sym_layer {
             label = "Sym.";
             bindings = <
-  &kp N1            &kp N2       &kp N3                 &kp NUMBER_4     &kp N5               &kp NUMBER_6  &kp N7           &kp N8             &kp N9     &kp N0
-  &kp LESS_THAN     &kp AT_SIGN  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET     &kp EQUAL     &sk TILDE        &kp SINGLE_QUOTE   &kp PLUS   &kp ASTERISK
-  &kp GREATER_THAN  &kp DOLLAR   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &trans    &trans    &kp PERCENT   &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp MINUS  &sk CARET
-                                           &none          &mo 3            &mo 4                &trans        &trans &none 
+&kp N1            &kp N2       &kp N3                 &kp NUMBER_4     &kp N5                               &kp NUMBER_6  &kp N7           &kp N8             &kp N9     &kp N0
+&kp LESS_THAN     &kp AT_SIGN  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET                     &kp EQUAL     &sk TILDE        &kp SINGLE_QUOTE   &kp PLUS   &kp ASTERISK
+&kp GREATER_THAN  &kp DOLLAR   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &trans    &trans  &kp PERCENT   &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp MINUS  &sk CARET
+                                                      &none            &mo 3              &mo 4     &trans  &trans        &none
             >;
         };
 
@@ -261,10 +259,10 @@
         ext_layer {
             label = "Mods";
             bindings = <
-  &kp ESC    &kp C_PREV  &kp C_PP    &kp C_NEXT  &kp C_PAUSE    &kp PG_UP     &kp HOME  &kp UP    &kp END    &kp CAPS
-  &sk LALT   &sk LGUI    &sk LSHIFT  &sk LCTRL   &kp RALT       &kp PG_DN     &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL
-  &kp LC(Z)  &kp LC(X)   &kp LC(C)   &kp TAB     &kp LC(V)   &trans     &trans     &kp LC(BSPC)  &kp BSPC  &trans    &trans     &trans
-                          &none      &trans      &kp LCTRL      &kp ENTER     &mo 3 &none 
+&kp ESC    &kp C_PREV  &kp C_PP    &kp C_NEXT  &kp C_PAUSE                          &kp PG_UP     &kp HOME  &kp UP    &kp END    &kp CAPS
+&sk LALT   &sk LGUI    &sk LSHIFT  &sk LCTRL   &kp RALT                             &kp PG_DN     &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL
+&kp LC(Z)  &kp LC(X)   &kp LC(C)   &kp TAB     &kp LC(V)    &trans       &trans     &kp LC(BSPC)  &kp BSPC  &trans    &trans     &trans
+                                   &none       &trans       &kp LCTRL    &kp ENTER  &mo 3         &none
             >;
         };
 
@@ -273,10 +271,10 @@
         fnc_layer {
             label = "FRow";
             bindings = <
-  &kp F1    &kp F2    &kp F3      &kp F4     &kp F5      &kp F6   &kp F7   &kp F8           &kp F9  &kp F10
-  &sk LALT  &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT    &kp F11  &kp F12  &kp PRINTSCREEN  &trans  &trans
-  &none     &none     &none       &none      &none   &trans     &trans      &none    &none    &none            &none   &none
-                        &none        &none      &none       &none    &none &none 
+&kp F1    &kp F2    &kp F3      &kp F4     &kp F5                      &kp F6   &kp F7   &kp F8           &kp F9  &kp F10
+&sk LALT  &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT                    &kp F11  &kp F12  &kp PRINTSCREEN  &trans  &trans
+&none     &none     &none       &none      &none     &trans    &trans  &none    &none    &none            &none   &none
+                                &none      &none     &none     &none   &none    &none
             >;
         };
 
@@ -285,10 +283,10 @@
         symbols_2_layer {
             label = "Sym.2";
             bindings = <
-  &sk LS(SINGLE_QUOTE)  &kp UNDERSCORE    &kp MINUS             &kp AMPERSAND  &kp POUND    &none  &none  &none  &none  &none
-  &sk TILDE             &sk SINGLE_QUOTE  &kp NON_US_BACKSLASH  &kp PIPE       &kp SLASH    &none  &none  &none  &none  &none
-  &sk CARET             &none             &none                 &none          &kp RA(W)    &none  &none  &none  &none  &none
-                                &trans        &trans                   &none       &none          &none        &none  &none &none 
+&sk LS(SINGLE_QUOTE)  &kp UNDERSCORE    &kp MINUS             &kp AMPERSAND  &kp POUND                  &none  &none  &none  &none   &none
+&sk TILDE             &sk SINGLE_QUOTE  &kp NON_US_BACKSLASH  &kp PIPE       &kp SLASH                  &none  &none  &none  &none   &none
+&sk CARET             &none             &none                 &none          &kp RA(W)  &none    &none  &none  &none  &none  &trans  &trans
+                                                              &none          &none      &none    &none  &none  &none
             >;
         };
 
@@ -298,10 +296,10 @@
         settings_layer {
             label = "Sett.";
             bindings = <
-  &none   &none  &none  &none   &none     &none   &none  &unstick  &none  &none 
-  &none        &none  &none  &none      &none    &none   &none  &none     &none  &none
-  &none        &none  &none  &none       &none    &none   &none  &none     &none  &none
-          &trans    &trans         &none        &none       &none           &none         &none &none 
+&bootloader     &none  &none  &none  &bt BT_SEL 0                  &none  &none  &unstick  &none   &none
+&bt BT_CLR_ALL  &none  &none  &none  &bt BT_SEL 1                  &none  &none  &none     &none   &none
+&none           &none  &none  &none  &none         &none    &none  &none  &none  &none     &trans  &trans
+                              &none  &none         &none    &none  &none  &none
             >;
         };
     };
