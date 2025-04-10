@@ -238,8 +238,8 @@
             label = "Base";
             bindings = <
   &kp Q  &kp W  &kp E  &kp R  &kp T               &kp Y      &kp U  &kp I      &kp O    &kp P
-   &hm LCTRL A     &hm LALT S      &hm LGUI D      &hms LSHFT F  &kp G               &kp H      &hms RSHFT J    &hm RGUI K      &hm RALT L    &hm RCTRL QMARK
-  &kp Z  &kp X  &kp C  &kp V  &kp B               &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON
+  &hm LCTRL A   &hm LALT S      &hm LGUI D      &hms LSHFT F  &kp G               &kp H      &hms RSHFT J    &hm RGUI K      &hm RALT L    &hm RCTRL QMARK
+  &kp Z  &kp X  &kp C  &kp V  &kp B &trans &trans               &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON
                    &trans &trans   &mo 2  &qt LSHIFT SPACE    &kp SPACE  &sl 1 &trans
             >;
         };
@@ -251,8 +251,8 @@
             bindings = <
   &kp N1            &kp N2       &kp N3                 &kp NUMBER_4     &kp N5               &kp NUMBER_6  &kp N7           &kp N8             &kp N9     &kp N0
   &kp LESS_THAN     &kp AT_SIGN  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET     &kp EQUAL     &sk TILDE        &kp SINGLE_QUOTE   &kp PLUS   &kp ASTERISK
-  &kp GREATER_THAN  &kp DOLLAR   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET    &kp PERCENT   &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp MINUS  &sk CARET
-                                      &trans    &trans      &none          &mo 3            &mo 4                &trans        &trans &none 
+  &kp GREATER_THAN  &kp DOLLAR   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &trans    &trans    &kp PERCENT   &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp MINUS  &sk CARET
+                                           &none          &mo 3            &mo 4                &trans        &trans &none 
             >;
         };
 
@@ -263,8 +263,8 @@
             bindings = <
   &kp ESC    &kp C_PREV  &kp C_PP    &kp C_NEXT  &kp C_PAUSE    &kp PG_UP     &kp HOME  &kp UP    &kp END    &kp CAPS
   &sk LALT   &sk LGUI    &sk LSHIFT  &sk LCTRL   &kp RALT       &kp PG_DN     &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL
-  &kp LC(Z)  &kp LC(X)   &kp LC(C)   &kp TAB     &kp LC(V)      &kp LC(BSPC)  &kp BSPC  &trans    &trans     &trans
-                        &trans     &trans    &none      &trans      &kp LCTRL      &kp ENTER     &mo 3 &none 
+  &kp LC(Z)  &kp LC(X)   &kp LC(C)   &kp TAB     &kp LC(V)   &trans     &trans     &kp LC(BSPC)  &kp BSPC  &trans    &trans     &trans
+                          &none      &trans      &kp LCTRL      &kp ENTER     &mo 3 &none 
             >;
         };
 
@@ -275,8 +275,8 @@
             bindings = <
   &kp F1    &kp F2    &kp F3      &kp F4     &kp F5      &kp F6   &kp F7   &kp F8           &kp F9  &kp F10
   &sk LALT  &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT    &kp F11  &kp F12  &kp PRINTSCREEN  &trans  &trans
-  &none     &none     &none       &none      &none       &none    &none    &none            &none   &none
-                    &trans    &trans    &none        &none      &none       &none    &none &none 
+  &none     &none     &none       &none      &none   &trans     &trans      &none    &none    &none            &none   &none
+                        &none        &none      &none       &none    &none &none 
             >;
         };
 
