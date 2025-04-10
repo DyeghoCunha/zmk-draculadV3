@@ -24,14 +24,15 @@
         >;
     };
 
-    kscan0: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row";
-        row-gpios = <&pro-micro-d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&pro-micro-d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&pro-micro-d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&pro-micro-d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-    };
+
+kscan0: kscan {
+    compatible = "zmk,kscan-gpio-matrix";
+    diode-direction = "col2row";
+    row-gpios = <&pro-micro-d 4 GPIO_ACTIVE_HIGH>,
+                <&pro-micro-d 5 GPIO_ACTIVE_HIGH>,
+                <&pro-micro-d 6 GPIO_ACTIVE_HIGH>,
+                <&pro-micro-d 7 GPIO_ACTIVE_HIGH>;
+};
 
     left_encoder: encoder_left {
         compatible = "alps,ec11";
