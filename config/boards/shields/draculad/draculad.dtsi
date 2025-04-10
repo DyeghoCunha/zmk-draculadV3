@@ -21,30 +21,30 @@
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
-        row-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>,
-                    <&pro_micro 5 GPIO_ACTIVE_HIGH>,
-                    <&pro_micro 6 GPIO_ACTIVE_HIGH>,
-                    <&pro_micro 7 GPIO_ACTIVE_HIGH>;
+        row-gpios = <&pro-micro 4 GPIO_ACTIVE_HIGH>,
+                    <&pro-micro 5 GPIO_ACTIVE_HIGH>,
+                    <&pro-micro 6 GPIO_ACTIVE_HIGH>,
+                    <&pro-micro 7 GPIO_ACTIVE_HIGH>;
     };
 
     left_encoder: encoder_left {
         compatible = "alps,ec11";
-        a-gpios = <&pro_micro 8 GPIO_ACTIVE_HIGH>;
-        b-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;
+        a-gpios = <&pro-micro 8 GPIO_ACTIVE_HIGH>;
+        b-gpios = <&pro-micro 9 GPIO_ACTIVE_HIGH>;
         steps = <80>;
     };
 
     right_encoder: encoder_right {
         compatible = "alps,ec11";
-        a-gpios = <&pro_micro 10 GPIO_ACTIVE_HIGH>;
-        b-gpios = <&pro_micro 11 GPIO_ACTIVE_HIGH>;
+        a-gpios = <&pro-micro 10 GPIO_ACTIVE_HIGH>;
+        b-gpios = <&pro-micro 11 GPIO_ACTIVE_HIGH>;
         steps = <80>;
     };
 
     right_encoder2: encoder_right2 {
         compatible = "alps,ec11";
-        a-gpios = <&pro_micro 12 GPIO_ACTIVE_HIGH>;
-        b-gpios = <&pro_micro 14 GPIO_ACTIVE_HIGH>;
+        a-gpios = <&pro-micro 12 GPIO_ACTIVE_HIGH>;
+        b-gpios = <&pro-micro 14 GPIO_ACTIVE_HIGH>;
         steps = <80>;
     };
 
@@ -68,7 +68,7 @@
         triggers-per-rotation = <20>;
     };
 
-    pro_micro: connector {
+    pro-micro: connector {
         compatible = "sparkfun,pro-micro";
         gpio-map = <
             0   &gpio0 0   0
@@ -107,12 +107,6 @@
     };
 
     aliases {
-        pro_micro = &pro_micro;
+        pro-micro = &pro-micro;
     };
-
-
-
 };
-
-
-
