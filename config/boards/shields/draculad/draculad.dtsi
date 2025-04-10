@@ -68,14 +68,13 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(3,1)         RC(3,8) RC(2,5) RC(2,6) 
      }; 
 
 
+
 right_encoder2: encoder_right2 {
     compatible = "alps,ec11";
-    a-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;   // P0.08
-    b-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;   // P0.09
+    a-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // P0.08
+    b-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // P0.09
     steps = <80>;
 };
-
-
 
 
 
