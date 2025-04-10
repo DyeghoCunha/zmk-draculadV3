@@ -56,7 +56,7 @@ map = <
             b-gpios = <&pro_micro_d 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
             resolution = <4>;
     };    
-right_encoder2: encoder_right {
+right_encoder2: encoder_right_2 {
             compatible = "alps,ec11";
             label = "RIGHT_ENCODER2";
             a-gpios = <&pro_micro_a 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
