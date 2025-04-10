@@ -232,7 +232,7 @@
                                 Z       X       C       V       B       N       M       ,       .       /
                                                 TAB     TAB     BSPC    SPC     TAB     TAB
                         */
-          &hm LCTRL A     &hm LALT S      &hm LGUI D      &hms LSHFT F  &hms RSHFT J    &hm RGUI K      &hm RALT L      &hm RCTRL SEMI
+       
 
     default_layer {
             label = "Base";
