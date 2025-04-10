@@ -42,24 +42,19 @@ map = <
     };
 
     left_encoder: encoder_left {
-        compatible = "alps,ec11";
-        a-gpios = <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;   // P0.08
-        b-gpios = <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;   // P0.09
-        steps = <80>;
-    };
+            compatible = "alps,ec11";
+            label = "LEFT_ENCODER";
+            a-gpios = <&pro_micro_d 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+            b-gpios = <&pro_micro_a 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+            resolution = <4>;
+        };
 
     right_encoder: encoder_right {
-        compatible = "alps,ec11";
-        a-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // P0.10
-        b-gpios = <&pro_micro 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // P0.11
-        steps = <80>;
-    };
-
-    right_encoder2: encoder_right2 {
-        compatible = "alps,ec11";
-        a-gpios = <&pro_micro 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // P0.12
-        b-gpios = <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // P0.14
-        steps = <80>;
+            compatible = "alps,ec11";
+            label = "RIGHT_ENCODER";
+            a-gpios = <&pro_micro_a 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+            b-gpios = <&pro_micro_d 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+            resolution = <4>;
     };
 
     led_strip_left: rgb_left {
@@ -82,47 +77,9 @@ map = <
         triggers-per-rotation = <20>;
     };
 
-    connector: pro_micro {
-        compatible = "sparkfun,pro-micro";
-        gpio-map = <
-            0   &gpio0 0   0
-            1   &gpio0 1   0
-            2   &gpio0 2   0
-            3   &gpio0 3   0
-            4   &gpio0 4   0
-            5   &gpio0 5   0
-            6   &gpio0 6   0
-            7   &gpio0 7   0
-            8   &gpio0 8   0
-            9   &gpio0 9   0
-            10  &gpio0 10  0
-            11  &gpio0 11  0
-            12  &gpio0 12  0
-            13  &gpio0 13  0
-            14  &gpio0 14  0
-            15  &gpio0 15  0
-            16  &gpio0 16  0
-            17  &gpio0 17  0
-            18  &gpio0 18  0
-            19  &gpio0 19  0
-            20  &gpio0 20  0
-            21  &gpio0 21  0
-            22  &gpio0 22  0
-            23  &gpio0 23  0
-            24  &gpio0 24  0
-            25  &gpio0 25  0
-            26  &gpio0 26  0
-            27  &gpio0 27  0
-            28  &gpio0 28  0
-            29  &gpio0 29  0
-            30  &gpio0 30  0
-            31  &gpio0 31  0
-        >;
-    };
+
 };
 
-aliases {
-    pro_micro = &connector;
-};
+
 
 
