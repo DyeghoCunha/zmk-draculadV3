@@ -114,9 +114,11 @@ kscan0: kscan {
         >;
     };
     
-    aliases {
-        pro-micro = &connector;
-    };
+ aliases {
+    pro-micro-a = &connector;
+    pro-micro-d = &connector;
+};
+
 };
 
 
