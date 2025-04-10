@@ -224,11 +224,6 @@
 &kp Z  &kp X  &kp C  &kp V   &kp B  &kp C_MUTE          &rgb_ug RGB_ON  &kp N  &kp M         &kp COMMA  &kp DOT  &kp SEMICOLON
                      &trans  &mo 2  &qt LSHIFT SPACE    &kp SPACE       &sl 1  &kp NUMBER_6
             >;
-
-            sensor-bindings =
-                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp A B>,
-                <&inc_dec_kp NUMBER_1 NUMBER_2>;
         };
 
         // Numbers and high frequency symbols
