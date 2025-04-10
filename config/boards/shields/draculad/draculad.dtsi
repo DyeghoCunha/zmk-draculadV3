@@ -111,9 +111,11 @@
             31  &gpio0 31  0
         >;
     };
-};
-
 aliases {
     pro_micro = &connector;
 };
+
+};
+
+
 
