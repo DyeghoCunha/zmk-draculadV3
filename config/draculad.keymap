@@ -228,7 +228,7 @@
                 <&inc_dec_kp A B>,
                 <&inc_dec_kp B A>;
         };
-        };
+        
 
         // Numbers and high frequency symbols
 
@@ -245,7 +245,7 @@
                 <&inc_dec_kp A B>,
                 <&inc_dec_kp B A>;
         };
-        };
+        
 
         // Main modifiers and arrow keys
 
@@ -262,7 +262,7 @@
                 <&inc_dec_kp A B>,
                 <&inc_dec_kp B A>;
         };
-        };
+        
 
         // Function keys with modifiers
 
@@ -279,7 +279,7 @@
                 <&inc_dec_kp A B>,
                 <&inc_dec_kp B A>;
         };
-        };
+        
 
         // Low frequency symbols
 
@@ -296,7 +296,7 @@
                 <&inc_dec_kp A B>,
                 <&inc_dec_kp B A>;
         };
-        };
+        
 
         // Used to type regional accents
         // Used to change the keyboard's settings
@@ -314,7 +314,7 @@
                 <&inc_dec_kp A B>,
                 <&inc_dec_kp B A>;
         };
-        };
+        
     };
 };
 
