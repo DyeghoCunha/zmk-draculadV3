@@ -109,7 +109,7 @@
     aliases {
         pro_micro = &pro_micro;
     };
-};
+
 
 
 };
