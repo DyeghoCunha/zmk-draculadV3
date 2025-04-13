@@ -19,19 +19,33 @@
 	status = "okay";
 };
 
-&i2c1 {
-    status = "okay";
-    ssd1306: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        width = <128>;
-        height = <64>;
-        label = "OLED";
-        reset-gpios = <&pro_micro_d 5 GPIO_ACTIVE_LOW>; // ajuste conforme necessário
+&pinctrl {
+    i2c1_default: i2c1_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 6)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 7)>;
+        };
     };
 };
 
- / {
+&i2c1 {
+    compatible = "nordic,nrf-twim";
+    status = "okay";
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-names = "default";
+    clock-frequency = <I2C_BITRATE_FAST>;
+
+    ssd1306: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        label = "OLED";
+        width = <128>;
+        height = <64>;
+        reset-gpios = <&pro_micro_d 5 GPIO_ACTIVE_LOW>; // ajuste se necessário
+    };
+};
+
+/ {
     chosen {
         zephyr,display = &ssd1306;
     };
