@@ -31,15 +31,16 @@
     pinctrl-names = "default";
     clock-frequency = <I2C_BITRATE_FAST>;
 
-    ssd1306: ssd1306@3c {
-        compatible = "solomon,ssd1306fb-i2c";
-        reg = <0x3c>;
-        label = "OLED";
-        width = <128>;
-        height = <64>;
-        segment-offset = <0x00>;
-        reset-gpios = <&pro_micro_d 5 GPIO_ACTIVE_LOW>; // se aplicável
-    };
+  ssd1306: ssd1306@3c {
+    compatible = "solomon,ssd1306fb-i2c"; // <- Corrigido aqui
+    reg = <0x3c>;
+    label = "OLED";
+    width = <128>;
+    height = <64>;
+    segment-offset = <0x00>;
+    reset-gpios = <&pro_micro_d 5 GPIO_ACTIVE_LOW>; // se estiver usando reset
+};
+
 };
 
 / {
