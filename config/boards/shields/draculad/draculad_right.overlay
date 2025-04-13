@@ -1,4 +1,3 @@
-
 #include "draculad.dtsi"
 
 &default_transform {
@@ -6,52 +5,45 @@
 };
 
 &kscan0 {
-    col-gpios
-        = <&pro_micro_d 15 GPIO_ACTIVE_HIGH>
-        , <&pro_micro_a 0 GPIO_ACTIVE_HIGH>
-        , <&pro_micro_a 1 GPIO_ACTIVE_HIGH>
-        , <&pro_micro_a 2 GPIO_ACTIVE_HIGH>
-        , <&pro_micro_a 3 GPIO_ACTIVE_HIGH>
-        ;
+    col-gpios = <&pro_micro_d 15 GPIO_ACTIVE_HIGH>,
+                <&pro_micro_a 0 GPIO_ACTIVE_HIGH>,
+                <&pro_micro_a 1 GPIO_ACTIVE_HIGH>,
+                <&pro_micro_a 2 GPIO_ACTIVE_HIGH>,
+                <&pro_micro_a 3 GPIO_ACTIVE_HIGH>;
 };
 
 &right_encoder {
-	status = "okay";
+    status = "okay";
 };
 
 &pinctrl {
-    i2c1_default: i2c1_default {
+    i2c0_default: i2c0_default {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 6)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 7)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0, 6)>, <NRF_PSEL(TWIM_SCL, 0, 7)>;
         };
     };
 };
 
-&i2c1 {
+&i2c0 {
     compatible = "nordic,nrf-twim";
     status = "okay";
-    pinctrl-0 = <&i2c1_default>;
+    pinctrl-0 = <&i2c0_default>;
     pinctrl-names = "default";
-    clock-frequency = <I2C_BITRATE_FAST>;
+    clock-frequency = <I2C_BITRATE_STANDARD>;
 
-   ssd1306: ssd1306@3c {
-        compatible = "solomon,ssd1306fb-i2c"; // CORREÇÃO: com -i2c
+    ssd1306: ssd1306@3c {
+        compatible = "solomon,ssd1306fb-i2c";
         reg = <0x3c>;
         label = "OLED";
         width = <128>;
         height = <64>;
         segment-offset = <0x00>;
-        reset-gpios = <&pro_micro_d 5 GPIO_ACTIVE_LOW>; // se usar pino de reset
+        reset-gpios = <&pro_micro_d 5 GPIO_ACTIVE_LOW>;
     };
-
 };
 
-
-/ {
-    chosen {
-        zephyr,display = &ssd1306;
-    };
+&{/chosen} {
+    zephyr,display = &ssd1306;
 };
 
 
