@@ -18,3 +18,18 @@
 &right_encoder {
 	status = "okay";
 };
+
+&pro_micro_d {
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <64>;
+        reset-gpios = <&pro_micro_d 5 GPIO_ACTIVE_LOW>; // exemplo
+        label = "OLED";
+    };
+};
+
+&chosen {
+    zephyr,display = &oled;
+};
