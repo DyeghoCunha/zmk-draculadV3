@@ -63,13 +63,6 @@
       "identifier": "encoder_right",
       "compatible": "alps,ec11",
       "label": "RIGHT_ENCODER"
-    },
-    {
-      "ref": "right_encoder2",
-      "name": "encoder_right2",
-      "identifier": "encoder_right2",
-      "compatible": "alps,ec11",
-      "label": "RIGHT_ENCODER2"
     }
   ]
 }
