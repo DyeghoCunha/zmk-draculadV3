@@ -1,21 +1,52 @@
+/* config/boards/shields/draculad/draculad_right.overlay */
+
 #include "draculad.dtsi"
 
+/* Deslocamento de colunas para o lado direito */
 &default_transform {
     col-offset = <5>;
 };
 
+/* Colunas do lado direito (confira se os pinos batem com seu PCB) */
 &kscan0 {
     col-gpios = <&pro_micro_d 15 GPIO_ACTIVE_HIGH>,
-                <&pro_micro_a 0 GPIO_ACTIVE_HIGH>,
-                <&pro_micro_a 1 GPIO_ACTIVE_HIGH>,
-                <&pro_micro_a 2 GPIO_ACTIVE_HIGH>,
-                <&pro_micro_a 3 GPIO_ACTIVE_HIGH>;
+                <&pro_micro_a 0  GPIO_ACTIVE_HIGH>,
+                <&pro_micro_a 1  GPIO_ACTIVE_HIGH>,
+                <&pro_micro_a 2  GPIO_ACTIVE_HIGH>,
+                <&pro_micro_a 3  GPIO_ACTIVE_HIGH>;
 };
 
+/* Encoders do lado direito (definidos no .dtsi) */
 &right_encoder {
     status = "okay";
 };
 
 &right_encoder2 {
     status = "okay";
+};
+
+/* Escolhe o display deste lado (apenas se existir OLED no lado direito) */
+&{/chosen} {
+    zephyr,display = &oled_right;
+};
+
+/* --- OLED no barramento I²C (ajuste i2c0→i2c1 se seu hardware usar i2c1) --- */
+&i2c0 {
+    status = "okay";
+
+    oled_right: ssd1306@3c {
+        compatible = "solomon,ssd1306fb-i2c";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        status = "okay";
+        /* Se houver pino RESET conectado, descomente e ajuste:
+         * reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
+         */
+        /* Opcional: velocidade do barramento
+         * bus-speed = <I2C_BITRATE_FAST>;
+         */
+    };
 };
